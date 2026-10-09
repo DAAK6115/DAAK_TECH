@@ -1,0 +1,440 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand */
+  --daak-navy: #0a1a2f;
+  --daak-blue: #00b4ff;
+  --daak-cyan: #25f4ee;
+  --daak-yellow: #ffc300;
+
+  /* Neutral */
+  --daak-white: #ffffff;
+  --daak-light: #f6f8fb;
+  --daak-text: #0b1220;
+  --daak-gray: #a0a0a0;
+  --daak-border: #e5eaf0;
+
+  /* Surfaces */
+  --surface-primary: #ffffff;
+  --surface-secondary: #f6f8fb;
+  --surface-dark: #0a1a2f;
+
+  /* Radius */
+  --radius-button: 12px;
+  --radius-card: 20px;
+  --radius-panel: 28px;
+
+  /* Container */
+  --container-width: 1280px;
+
+  /* Motion */
+  --transition-fast: 160ms;
+  --transition-normal: 260ms;
+}
+
+@theme inline {
+  --color-daak-navy: var(--daak-navy);
+  --color-daak-blue: var(--daak-blue);
+  --color-daak-cyan: var(--daak-cyan);
+  --color-daak-yellow: var(--daak-yellow);
+  --color-daak-light: var(--daak-light);
+  --color-daak-text: var(--daak-text);
+  --color-daak-gray: var(--daak-gray);
+
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-montserrat);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--daak-white);
+  color: var(--daak-text);
+  font-family: var(--font-inter), sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--daak-cyan);
+  color: var(--daak-navy);
+}
+
+:focus-visible {
+  outline: 3px solid var(--daak-cyan);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================
+   DAAK_TECH — DIGITAL CIRCUIT ANIMATIONS
+   ========================================================= */
+
+/* ---------- LIGNES DU CIRCUIT ---------- */
+
+@keyframes draw-circuit {
+  0% {
+    stroke-dashoffset: 600;
+    opacity: 0.15;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+.circuit-path {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+
+  animation:
+    draw-circuit 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.circuit-delay-1 {
+  animation-delay: 0.2s;
+}
+
+.circuit-delay-2 {
+  animation-delay: 0.4s;
+}
+
+.circuit-delay-3 {
+  animation-delay: 0.6s;
+}
+
+
+/* ---------- NŒUDS ---------- */
+
+@keyframes pulse-node {
+  0%,
+  100% {
+    opacity: 0.35;
+    filter: drop-shadow(0 0 2px rgba(37, 244, 238, 0.25));
+  }
+
+  50% {
+    opacity: 1;
+    filter:
+      drop-shadow(0 0 5px rgba(37, 244, 238, 0.9))
+      drop-shadow(0 0 12px rgba(0, 180, 255, 0.55));
+  }
+}
+
+.circuit-node {
+  animation: pulse-node 1.8s ease-in-out infinite;
+}
+
+
+/* ---------- LOGO FLOTTANT ---------- */
+
+@keyframes logo-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1deg) scale(1);
+  }
+
+  50% {
+    transform: translateY(-16px) rotate(1.5deg) scale(1.045);
+  }
+}
+
+@keyframes logo-glow {
+  0%,
+  100% {
+    filter:
+      drop-shadow(0 0 5px rgba(37, 244, 238, 0.18))
+      drop-shadow(0 0 12px rgba(0, 180, 255, 0.1));
+  }
+
+  50% {
+    filter:
+      drop-shadow(0 0 14px rgba(37, 244, 238, 0.55))
+      drop-shadow(0 0 34px rgba(0, 180, 255, 0.3));
+  }
+}
+
+.logo-float {
+  transform-origin: center;
+
+  animation:
+    logo-float 4.5s ease-in-out infinite,
+    logo-glow 3s ease-in-out infinite;
+
+  will-change: transform, filter;
+}
+
+
+/* ---------- PANNEAU CENTRAL ---------- */
+
+@keyframes core-pulse {
+  0%,
+  100% {
+    border-color: rgba(37, 244, 238, 0.18);
+
+    box-shadow:
+      0 0 45px rgba(0, 180, 255, 0.06),
+      inset 0 0 25px rgba(37, 244, 238, 0.015);
+  }
+
+  50% {
+    border-color: rgba(37, 244, 238, 0.4);
+
+    box-shadow:
+      0 0 100px rgba(0, 180, 255, 0.19),
+      inset 0 0 45px rgba(37, 244, 238, 0.06);
+  }
+}
+
+.circuit-core {
+  animation: core-pulse 4.5s ease-in-out infinite;
+}
+
+
+/* ---------- ANNEAU INTÉRIEUR ---------- */
+
+/*
+On ne fait PAS tourner le cercle lui-même :
+un cercle tourné sur son centre reste visuellement identique.
+
+On déplace les pointillés sur sa circonférence.
+*/
+
+@keyframes orbit-flow {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: -72;
+  }
+}
+
+.circuit-orbit {
+  stroke-dasharray: 8 10;
+
+  animation:
+    orbit-flow 5s linear infinite;
+}
+
+
+/* ---------- ACCESSIBILITÉ ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-float,
+  .circuit-core,
+  .circuit-orbit,
+  .circuit-node,
+  .circuit-path {
+    animation: none !important;
+  }
+
+  .circuit-path {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* =========================================
+   SERVICE VISUALS
+   ========================================= */
+
+@keyframes service-image-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-1.5deg);
+  }
+
+  50% {
+    transform: translate3d(0, -9px, 0) rotate(1deg);
+  }
+}
+
+.service-visual-image {
+  animation: service-image-float 5.5s ease-in-out infinite;
+  transition:
+    transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 420ms ease;
+  will-change: transform;
+}
+
+.service-visual-shell {
+  transition:
+    transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 420ms ease,
+    border-color 420ms ease;
+}
+
+.service-visual-shell:hover {
+  transform: rotate(-1deg) translateY(-3px);
+
+  box-shadow:
+    0 24px 60px rgba(10, 26, 47, 0.16),
+    0 0 35px rgba(0, 180, 255, 0.08);
+}
+
+.service-visual-shell:hover .service-visual-image {
+  transform: translateY(-8px) scale(1.045);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-visual-image {
+    animation: none;
+  }
+}
+
+/* =========================================================
+   DAAK_TECH — MOTION DESIGN LAYER (navy · bleu · cyan · jaune)
+   ========================================================= */
+
+@property --a {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes rotate-a { to { --a: 360deg; } }
+@keyframes float-y { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+@keyframes aurora-a { 0%,100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(130px,80px,0) scale(1.25); } }
+@keyframes aurora-b { 0%,100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(-150px,-60px,0) scale(.85); } }
+@keyframes grid-drift { to { background-position: 0 56px, 56px 0; } }
+@keyframes gradient-flow { to { background-position: 300% 0; } }
+@keyframes shine-sweep { 55%,100% { left: 140%; } }
+@keyframes btn-pulse { 0% { box-shadow: 0 0 0 0 rgba(0,180,255,.5); } 70%,100% { box-shadow: 0 0 0 22px rgba(0,180,255,0); } }
+@keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes travel { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -100; } }
+@keyframes divider-run { from { left: -12%; } to { left: 100%; } }
+@keyframes wheel { 0% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(14px); opacity: 0; } }
+@keyframes ping-soft { 70%,100% { box-shadow: 0 0 0 12px rgba(255,195,0,0); } }
+@keyframes scan { from { transform: translateY(-100%); } to { transform: translateY(420%); } }
+
+.spin-slow { animation: spin 26s linear infinite; }
+.spin-rev  { animation: spin 34s linear infinite reverse; }
+.float-y   { animation: float-y 6s ease-in-out infinite; }
+
+.aurora-blob { position: absolute; border-radius: 9999px; filter: blur(110px); mix-blend-mode: screen; will-change: transform; }
+.aurora-1 { width: 520px; height: 520px; left: -140px; top: -80px; background: rgba(0,180,255,.28); animation: aurora-a 16s ease-in-out infinite; }
+.aurora-2 { width: 440px; height: 440px; right: -120px; top: 18%; background: rgba(37,244,238,.18); animation: aurora-b 19s ease-in-out infinite; }
+.aurora-3 { width: 360px; height: 360px; left: 38%; bottom: -180px; background: rgba(255,195,0,.13); animation: aurora-a 23s ease-in-out infinite reverse; }
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(37,244,238,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37,244,238,.08) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 40%, #000, transparent 75%);
+  mask-image: radial-gradient(ellipse at 50% 40%, #000, transparent 75%);
+  animation: grid-drift 12s linear infinite;
+}
+
+.gradient-text {
+  background: linear-gradient(100deg, #25f4ee, #00b4ff, #ffc300, #25f4ee);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-flow 7s linear infinite;
+}
+
+.btn-shine { position: relative; overflow: hidden; }
+.btn-shine::after {
+  content: ""; position: absolute; top: 0; left: -70%; width: 45%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.55), transparent);
+  transform: skewX(-20deg); animation: shine-sweep 3.6s ease-in-out infinite; pointer-events: none;
+}
+.btn-pulse { animation: btn-pulse 2.8s infinite; }
+
+.neon-border { position: relative; }
+.neon-border::before {
+  content: ""; position: absolute; inset: -1.5px; border-radius: inherit; padding: 1.5px; pointer-events: none;
+  background: conic-gradient(from var(--a), transparent 0 62%, #25f4ee, #00b4ff, #ffc300, transparent);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  animation: rotate-a 5s linear infinite;
+}
+
+.marquee-track { display: flex; width: max-content; animation: marquee 45s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+.pulse-line { stroke-dasharray: 7 93; animation: travel 3.2s linear infinite; }
+.divider-dot { position: absolute; top: 50%; width: 90px; height: 3px; margin-top: -1.5px; border-radius: 9999px;
+  background: linear-gradient(90deg, transparent, #ffc300, transparent); animation: divider-run 3.4s linear infinite; }
+.wheel-dot { animation: wheel 1.7s ease-in infinite; }
+.ping-dot { animation: ping-soft 2s infinite; }
+.scan-bar { animation: scan 4.5s linear infinite; }
+
+.shine-hover { position: relative; }
+.shine-hover::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 5;
+  background: linear-gradient(115deg, transparent 35%, rgba(255,255,255,.2) 50%, transparent 65%);
+  transform: translateX(-120%); transition: transform .9s cubic-bezier(.22,1,.36,1);
+}
+.shine-hover:hover::after { transform: translateX(120%); }
+
+.label-line { transform-origin: left; animation: label-grow 1s cubic-bezier(.22,1,.36,1) both; }
+@keyframes label-grow { from { transform: scaleX(0); } }
+
+@media (hover: none) { .cursor-glow { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .aurora-blob, .grid-bg, .gradient-text, .btn-shine::after, .btn-pulse, .neon-border::before,
+  .marquee-track, .pulse-line, .divider-dot, .wheel-dot, .ping-dot, .scan-bar, .spin-slow, .spin-rev, .float-y { animation: none !important; }
+  .pulse-dot, .cursor-glow { display: none; }
+}
+
+/* ---------- Pages internes : finition premium ---------- */
+.hero-edge { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; overflow: hidden;
+  background: linear-gradient(90deg, transparent, rgba(37,244,238,.55), rgba(0,180,255,.55), transparent); }
+.hero-edge .divider-dot { height: 2px; margin-top: -1px; }
+@media (prefers-reduced-motion: reduce) { .hero-edge .divider-dot { animation: none !important; } }
+
+/* ---------- Réalisations : aperçus et état vidéo vide ---------- */
+@keyframes shimmer { to { background-position: -200% 0; } }
+@keyframes eq { 0%,100% { transform: scaleY(.3); } 50% { transform: scaleY(1); } }
+@keyframes ring-out { from { transform: scale(1); opacity: .55; } to { transform: scale(2); opacity: 0; } }
+.shimmer-line { background: linear-gradient(90deg, rgba(255,255,255,.06), rgba(37,244,238,.35), rgba(255,255,255,.06)); background-size: 200% 100%; animation: shimmer 2.4s linear infinite; }
+.eq-bar { transform-origin: bottom; animation: eq 1.2s ease-in-out infinite; }
+.ring-out { animation: ring-out 2.6s ease-out infinite; }
+@media (prefers-reduced-motion: reduce) { .shimmer-line, .eq-bar, .ring-out { animation: none !important; } }
