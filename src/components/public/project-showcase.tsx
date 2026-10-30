@@ -106,7 +106,7 @@ function Tile({ project, index, total }: { project: ShowcaseProject; index: numb
               ))}
             </div>
             <span className="mt-7 inline-flex items-center gap-3 font-semibold text-daak-yellow">
-              Voir l’étude de cas
+              Découvrir le projet
               <span className="flex size-10 items-center justify-center rounded-full bg-daak-yellow text-daak-navy transition-transform duration-300 group-hover:rotate-45">
                 <ArrowUpRight size={18} />
               </span>
@@ -133,14 +133,14 @@ export function ProjectShowcase({ projects }: { projects: ShowcaseProject[] }) {
 
   return (
     <div>
-      <div role="tablist" aria-label="Filtrer les réalisations" className="mb-12 flex flex-wrap gap-3">
+      <div role="group" aria-label="Filtrer les réalisations" className="mb-12 flex flex-wrap gap-3">
         {filters.map((f) => {
           const on = active === f.id;
           return (
             <button
               key={f.id}
-              role="tab"
-              aria-selected={on}
+              type="button"
+              aria-pressed={on}
               onClick={() => setActive(f.id)}
               className={cn(
                 "relative rounded-full border px-5 py-2.5 text-sm font-semibold transition-colors",
@@ -154,6 +154,9 @@ export function ProjectShowcase({ projects }: { projects: ShowcaseProject[] }) {
         })}
       </div>
 
+      <p aria-live="polite" className="mb-6 text-sm text-slate-500">
+        {visible.length} {visible.length === 1 ? "projet affiché" : "projets affichés"}
+      </p>
       <motion.div layout className="grid grid-cols-12 gap-6 lg:gap-8">
         <AnimatePresence mode="popLayout">
           {visible.map((p, i) => (

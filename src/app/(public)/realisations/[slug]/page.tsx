@@ -240,6 +240,7 @@ export default async function ProjectPage({
       {/* =====================================================
           VIDÉO DE PRÉSENTATION
       ===================================================== */}
+      {project.videoUrl && (
       <section className="bg-daak-light py-20 lg:py-28">
         <Container>
           <SectionReveal>
@@ -253,6 +254,7 @@ export default async function ProjectPage({
           </SectionReveal>
         </Container>
       </section>
+      )}
 
       {/* =====================================================
           CONTEXTE
@@ -528,6 +530,7 @@ export default async function ProjectPage({
       {/* =====================================================
           TECHNOLOGIES — SLIDER AUTOMATIQUE
       ====================================================== */}
+      {project.stack.length > 0 && (
       <section
         className="
           overflow-hidden
@@ -567,6 +570,7 @@ export default async function ProjectPage({
         </SectionReveal>
 </Container>
       </section>
+      )}
 
       {/* =====================================================
           RÉSULTAT
@@ -593,6 +597,13 @@ export default async function ProjectPage({
               >
                 {project.result}
               </p>
+              <Link
+                href="/contact"
+                className="mt-9 inline-flex min-h-12 items-center gap-2 rounded-xl bg-daak-navy px-6 py-3 font-semibold text-white transition hover:bg-[#123b5a]"
+              >
+                Discuter d’un projet similaire
+                <ArrowRight size={17} aria-hidden="true" />
+              </Link>
             </div>
           </Reveal>
         </SectionReveal>

@@ -9,6 +9,7 @@ type ProjectCoverProps = {
   sizes?: string;
   priority?: boolean;
   className?: string;
+  fit?: "contain" | "cover";
 };
 
 function initialsOf(title: string) {
@@ -17,18 +18,37 @@ function initialsOf(title: string) {
   return letters.toUpperCase();
 }
 
-/** Capture d'écran qui défile au survol (si un parent porte la classe "group"), ou aperçu de remplacement. */
-export function ProjectCover({ image, alt, title, sizes = "(max-width: 1024px) 100vw, 50vw", priority, className }: ProjectCoverProps) {
+/** Les visuels en mode contain ne sont jamais rognés dans la vitrine. */
+export function ProjectCover({
+  image, alt, title,
+  sizes = "(max-width: 1024px) 100vw, 50vw",
+  priority,
+  className,
+  fit = "cover",
+}: ProjectCoverProps) {
   if (image) {
     return (
       <div className={cn("relative size-full overflow-hidden", className)}>
+        {fit === "contain" && (
+          <Image
+            src={image}
+            alt=""
+            fill
+            sizes={sizes}
+            aria-hidden="true"
+            className="pointer-events-none scale-110 object-cover opacity-20 blur-2xl"
+          />
+        )}
         <Image
           src={image}
           alt={alt}
           fill
           sizes={sizes}
           priority={priority}
-          className="object-cover object-top transition-[object-position] duration-[3600ms] ease-in-out group-hover:object-bottom"
+          className={cn(
+            "transition-transform duration-500",
+            fit === "contain" ? "object-contain p-2 group-hover:scale-[1.015]" : "object-cover object-top group-hover:object-bottom",
+          )}
         />
       </div>
     );
@@ -46,10 +66,6 @@ export function ProjectCover({ image, alt, title, sizes = "(max-width: 1024px) 1
         <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-semibold text-white/60">
           Aperçu en préparation
         </span>
-      </div>
-      <div aria-hidden="true" className="absolute inset-x-5 bottom-5 space-y-2">
-        <span className="shimmer-line block h-2.5 w-3/4 rounded-full" />
-        <span className="shimmer-line block h-2.5 w-1/2 rounded-full" />
       </div>
     </div>
   );

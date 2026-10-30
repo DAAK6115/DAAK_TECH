@@ -119,7 +119,7 @@ export default function ProjectsPage() {
                 </h2>
               </div>
               <p className="max-w-md leading-7 text-slate-600">
-                Filtrez par type de projet, puis survolez une capture pour la faire défiler.
+                Choisissez une catégorie, puis ouvrez une réalisation pour découvrir son contexte et ses fonctionnalités.
               </p>
             </div>
 
