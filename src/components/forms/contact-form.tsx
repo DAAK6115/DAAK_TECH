@@ -17,6 +17,7 @@ import {
 import { useSearchParams } from "next/navigation";
 
 import { services } from "@/data/services";
+import { serviceUsesBudget } from "@/lib/contact/budget-visibility";
 
 import {
   contactSchema,
@@ -137,6 +138,9 @@ export function ContactForm() {
     setForm((current) => ({
       ...current,
       [field]: value,
+      ...(field === "service" && !serviceUsesBudget(value)
+        ? { budget: "" }
+        : {}),
     }));
 
     setErrors((current) => ({
@@ -267,7 +271,7 @@ export function ContactForm() {
 
       payload.append(
         "budget",
-        result.data.budget ?? ""
+        serviceUsesBudget(result.data.service) ? result.data.budget ?? "" : ""
       );
 
       payload.append(
@@ -335,7 +339,11 @@ export function ContactForm() {
           ? error.message
           : "Impossible d’envoyer votre demande pour le moment.";
 
-      setServerError(message);
+      setServerError(
+        error instanceof TypeError
+          ? "Le serveur de contact est momentanément inaccessible. Réessayez dans quelques instants ou contactez DAAK_TECH par WhatsApp au 05 55 01 01 76."
+          : message
+      );
     } finally {
       setSubmitting(false);
     }
@@ -629,8 +637,9 @@ export function ContactForm() {
           </select>
         </Field>
 
-        {/* BUDGET */}
-        <Field label="Budget indicatif">
+        {/* BUDGET : seulement pour les prestations qui en ont besoin */}
+        {serviceUsesBudget(form.service) && (
+          <Field label="Budget indicatif">
           <select
             value={
               form.budget ?? ""
@@ -662,7 +671,8 @@ export function ContactForm() {
               )
             )}
           </select>
-        </Field>
+          </Field>
+        )}
 
         {/* DÉLAI */}
         <Field label="Délai souhaité">

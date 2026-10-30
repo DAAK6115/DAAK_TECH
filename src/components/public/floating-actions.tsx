@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { FileText, MessageCircle } from "lucide-react";
 
 const whatsapp =
-  "https://wa.me/2250705091338?text=" +
+  "https://wa.me/2250555010176?text=" +
   encodeURIComponent("Bonjour DAAK_TECH, j’aimerais en savoir plus sur vos services.");
 
 export function FloatingActions() {

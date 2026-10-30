@@ -1,4 +1,5 @@
 import path from "node:path";
+import { serviceUsesBudget } from "@/lib/contact/budget-visibility";
 
 import {
   NextResponse,
@@ -409,8 +410,9 @@ attachment = {
           .data.service,
 
       budget:
-        validation
-          .data.budget,
+        serviceUsesBudget(validation.data.service)
+          ? validation.data.budget
+          : undefined,
 
       deadline:
         validation
