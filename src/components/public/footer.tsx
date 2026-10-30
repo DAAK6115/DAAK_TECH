@@ -166,10 +166,10 @@ export function Footer() {
             <div className="mt-5 space-y-3 text-sm leading-6 text-white/60">
               <p>
                 <a
-                  href="tel:+2250703156943"
+                  href="tel:+2250705091338"
                   className="hover:text-daak-cyan"
                 >
-                  07 03 15 69 43
+                  07 05 09 13 38
                 </a>
               </p>
 
@@ -192,9 +192,9 @@ export function Footer() {
               </p>
 
               <p>
-                Immeuble Pelican, Cocody
+                Cocody, CHU d’Angré, en face de la Librairie de France, Cocody
                 <br />
-                Feux du Nouveau Camp
+                Cocody, CHU d’Angré, en face de la Librairie de France
               </p>
             </div>
           </div>

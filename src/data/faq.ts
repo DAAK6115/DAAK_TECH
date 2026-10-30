@@ -25,7 +25,7 @@ export const contactFaq: FaqItem[] = [
   {
     question: "Où se trouve DAAK_TECH ?",
     answer:
-      "Nos bureaux sont à l’Immeuble Pelican, à Cocody, aux Feux du Nouveau Camp. La carte ci-dessous vous permet de calculer votre itinéraire.",
+      "Nos bureaux sont à l’Cocody, CHU d’Angré, en face de la Librairie de France, à Cocody, aux Cocody, CHU d’Angré, en face de la Librairie de France. La carte ci-dessous vous permet de calculer votre itinéraire.",
   },
   {
     question: "Que deviennent mes données personnelles ?",

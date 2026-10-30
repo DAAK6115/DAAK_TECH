@@ -19,8 +19,8 @@ export default function MentionsLegalesPage() {
           <li>Forme juridique : <ToFill>forme juridique</ToFill></li>
           <li>Numéro d’immatriculation (RCCM) : CI-ABJ-03-2026-B13-02475</li>
           <li>Site web : daaktech.com</li>
-          <li>Siège : Immeuble Pelican, Cocody, Feux du Nouveau Camp, Abidjan, Côte d’Ivoire</li>
-          <li>Téléphone : <a className="text-daak-blue underline" href="tel:+2250703156943">07 03 15 69 43</a> · <a className="text-daak-blue underline" href="tel:+2250555010176">05 55 01 01 76</a></li>
+          <li>Siège : Cocody, CHU d’Angré, en face de la Librairie de France, Abidjan, Côte d’Ivoire</li>
+          <li>Téléphone : <a className="text-daak-blue underline" href="tel:+2250705091338">07 05 09 13 38</a> · <a className="text-daak-blue underline" href="tel:+2250555010176">05 55 01 01 76</a></li>
           <li>E-mail : <a className="text-daak-blue underline" href="mailto:contact@daaktech.com">contact@daaktech.com</a></li>
           <li>Directeur de la publication : DIOMANDE AZZIZ ANGE KEVIN</li>
         </ul>

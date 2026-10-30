@@ -12,7 +12,7 @@ export default function PolitiqueConfidentialitePage() {
     <LegalPage label="Vos données" title="Politique de confidentialité" updated="octobre 2026">
       <LegalSection title="Responsable du traitement">
         <p>
-          DAAK_TECH, Immeuble Pelican, Cocody, Feux du Nouveau Camp, Abidjan (Côte d’Ivoire) ·{" "}
+          DAAK_TECH, Cocody, CHU d’Angré, en face de la Librairie de France, Abidjan (Côte d’Ivoire) ·{" "}
           <a className="text-daak-blue underline" href="mailto:contact@daaktech.com">contact@daaktech.com</a>
         </p>
       </LegalSection>

@@ -140,10 +140,10 @@ export default function ContactPage() {
                   label="Téléphone"
                 >
                   <a
-                    href="tel:+2250703156943"
+                    href="tel:+2250705091338"
                     className="hover:text-daak-blue"
                   >
-                    07 03 15 69 43
+                    07 05 09 13 38
                   </a>
 
                   <span className="mx-2 text-slate-300">
@@ -174,9 +174,9 @@ export default function ContactPage() {
                   icon={MapPin}
                   label="Adresse"
                 >
-                  Immeuble Pelican, Cocody
+                  Cocody, CHU d’Angré, en face de la Librairie de France, Cocody
                   <br />
-                  Feux du Nouveau Camp
+                  Cocody, CHU d’Angré, en face de la Librairie de France
                 </ContactItem>
               </div>
 
