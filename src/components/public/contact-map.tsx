@@ -48,11 +48,7 @@ export function ContactMap() {
           </p>
 
           <p className="mt-3 leading-7 text-white/65">
-            CHU d&apos;Angré
-            <br />
-            En face de la Librairie de France
-            <br />
-            Cocody, Abidjan, Côte d&apos;Ivoire
+            Cocody, CHU d’Angré, en face de la Librairie de France
           </p>
 
           <a

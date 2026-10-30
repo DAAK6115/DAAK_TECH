@@ -174,8 +174,6 @@ export default function ContactPage() {
                   icon={MapPin}
                   label="Adresse"
                 >
-                  Cocody, CHU d’Angré, en face de la Librairie de France, Cocody
-                  <br />
                   Cocody, CHU d’Angré, en face de la Librairie de France
                 </ContactItem>
               </div>

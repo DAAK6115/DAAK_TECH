@@ -53,24 +53,24 @@ export function Header() {
         className={cn(
           "fixed inset-x-0 top-0 z-50 transition-all duration-300",
           scrolled
-            ? "border-b border-white/10 bg-daak-navy/95 shadow-lg shadow-black/5 backdrop-blur-xl"
+            ? "border-b border-white/10 bg-daak-navy/98 shadow-md shadow-black/10"
             : "bg-daak-navy"
         )}
       >
         <Container>
-          <div className="flex h-[88px] items-center justify-between">
+          <div className="flex h-[100px] items-center justify-between lg:h-[112px]">
             <Link
                 href="/"
                 className="relative z-10 flex items-center"
                 aria-label="DAAK_TECH - Accueil"
                 >
-                <div className="relative h-[64px] w-[260px]">
+                <div className="relative h-[88px] w-[224px] sm:h-[96px] sm:w-[280px] lg:h-[106px] lg:w-[340px]">
                     <Image
                     src="/branding/daak-tech-logo.png"
                     alt="Logo DAAK_TECH"
                     fill
                     priority
-                    sizes="260px"
+                    sizes="(max-width: 639px) 224px, (max-width: 1023px) 280px, 340px"
                     className="object-contain object-left"
                     />
                 </div>

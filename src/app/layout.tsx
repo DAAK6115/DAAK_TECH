@@ -21,6 +21,11 @@ export const metadata: Metadata = {
   },
   description:
     "DAAK_TECH accompagne entreprises, organisations et particuliers avec des solutions numériques et informatiques adaptées à leurs besoins.",
+  icons: {
+    icon: [{ url: "/branding/daak-tech-symbol.png", type: "image/png" }],
+    shortcut: "/branding/daak-tech-symbol.png",
+    apple: "/branding/daak-tech-symbol.png",
+  },
 };
 
 export default function RootLayout({

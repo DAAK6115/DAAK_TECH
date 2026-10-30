@@ -84,15 +84,15 @@ export function Footer() {
           <CircuitDivider />
         </div>
 
-        <div className="grid gap-12 py-20 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-12 py-20 md:grid-cols-2 lg:grid-cols-[1.35fr_.9fr_.9fr_1.1fr]">
           <div>
             <Link href="/" className="block">
-              <div className="relative h-[82px] w-[290px]">
+              <div className="relative h-[112px] w-full max-w-[360px]">
                 <Image
                   src="/branding/daak-tech-logo.png"
                   alt="Logo DAAK_TECH"
                   fill
-                  sizes="290px"
+                  sizes="(max-width: 1023px) 320px, 360px"
                   className="object-contain object-left"
                 />
               </div>
@@ -192,8 +192,6 @@ export function Footer() {
               </p>
 
               <p>
-                Cocody, CHU d’Angré, en face de la Librairie de France, Cocody
-                <br />
                 Cocody, CHU d’Angré, en face de la Librairie de France
               </p>
             </div>
