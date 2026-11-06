@@ -1,0 +1,88 @@
+/* DAAK_TECH — bandeau de partenaires à défilement continu, sans bibliothèque. */
+.partners-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.partners-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+.partners-track {
+  display: flex;
+  width: max-content;
+  animation: partners-marquee-scroll 42s linear infinite;
+  will-change: transform;
+}
+
+/* Les deux groupes sont identiques et de même largeur. */
+.partners-set {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 24px;
+  padding-right: 24px;
+}
+
+.partners-logo-card {
+  display: flex;
+  width: 232px;
+  height: 116px;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 22px;
+  background: #fff;
+  padding: 14px 16px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, .18);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+.partners-logo-card:hover,
+.partners-logo-card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 46px rgba(37, 244, 238, .17);
+}
+
+.partners-logo-card:focus-visible {
+  outline: 3px solid #25f4ee;
+  outline-offset: 3px;
+}
+
+/* 50 % = longueur exacte du premier groupe + son espacement final. */
+@keyframes partners-marquee-scroll {
+  to { transform: translateX(-50%); }
+}
+
+/* Une interaction doit toujours permettre de figer les logos. */
+.partners-marquee:hover .partners-track,
+.partners-marquee:focus-within .partners-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partners-marquee {
+    overflow: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .partners-track {
+    width: auto;
+    animation: none !important;
+  }
+  .partners-set {
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    padding-right: 0;
+  }
+  .partners-set:nth-child(2),
+  .partners-set [data-duplicate="true"] {
+    display: none;
+  }
+}

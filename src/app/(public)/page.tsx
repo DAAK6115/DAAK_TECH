@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { HomeHero } from "@/components/public/home-hero";
+import { PartnerNetwork } from "@/components/public/partner-network";
 import { ProcessTimeline } from "@/components/public/process-timeline";
 import { ServiceTicker } from "@/components/public/service-ticker";
 import { ServiceVisual } from "@/components/public/service-visual";
@@ -111,6 +112,9 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
+
+      {/* Partenaires — Partner Network */}
+      <PartnerNetwork />
 
       {/* Manifeste */}
       <section className="relative isolate overflow-hidden bg-daak-navy py-28 text-white lg:py-36">

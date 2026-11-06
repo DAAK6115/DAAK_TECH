@@ -1,0 +1,479 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Strix",
+          "informationUri": "https://strix.ai",
+          "rules": [
+            {
+              "id": "strix-coverage/hardcoded-credentials-and-secrets",
+              "name": "Hardcoded credentials and secrets",
+              "shortDescription": {
+                "text": "Coverage: Hardcoded credentials and secrets"
+              },
+              "fullDescription": {
+                "text": "Coverage of Hardcoded credentials and secrets across the assessed attack surface."
+              },
+              "defaultConfiguration": {
+                "level": "none"
+              },
+              "help": {
+                "text": "Coverage of Hardcoded credentials and secrets across the assessed attack surface.",
+                "markdown": "Coverage of Hardcoded credentials and secrets across the assessed attack surface."
+              },
+              "properties": {
+                "tags": [
+                  "coverage"
+                ]
+              }
+            },
+            {
+              "id": "strix-coverage/html-injection-semgrep-replaceall-escaping-audit",
+              "name": "HTML injection / Semgrep replaceAll escaping audit",
+              "shortDescription": {
+                "text": "Coverage: HTML injection / Semgrep replaceAll escaping audit"
+              },
+              "fullDescription": {
+                "text": "Coverage of HTML injection / Semgrep replaceAll escaping audit across the assessed attack surface."
+              },
+              "defaultConfiguration": {
+                "level": "none"
+              },
+              "help": {
+                "text": "Coverage of HTML injection / Semgrep replaceAll escaping audit across the assessed attack surface.",
+                "markdown": "Coverage of HTML injection / Semgrep replaceAll escaping audit across the assessed attack surface."
+              },
+              "properties": {
+                "tags": [
+                  "coverage"
+                ]
+              }
+            },
+            {
+              "id": "strix-coverage/path-traversal-semgrep-path-join-audit",
+              "name": "Path traversal / Semgrep path.join audit",
+              "shortDescription": {
+                "text": "Coverage: Path traversal / Semgrep path.join audit"
+              },
+              "fullDescription": {
+                "text": "Coverage of Path traversal / Semgrep path.join audit across the assessed attack surface."
+              },
+              "defaultConfiguration": {
+                "level": "none"
+              },
+              "help": {
+                "text": "Coverage of Path traversal / Semgrep path.join audit across the assessed attack surface.",
+                "markdown": "Coverage of Path traversal / Semgrep path.join audit across the assessed attack surface."
+              },
+              "properties": {
+                "tags": [
+                  "coverage"
+                ]
+              }
+            },
+            {
+              "id": "strix-coverage/authentication-jwt-idor",
+              "name": "Authentication / JWT / IDOR",
+              "shortDescription": {
+                "text": "Coverage: Authentication / JWT / IDOR"
+              },
+              "fullDescription": {
+                "text": "Coverage of Authentication / JWT / IDOR across the assessed attack surface."
+              },
+              "defaultConfiguration": {
+                "level": "none"
+              },
+              "help": {
+                "text": "Coverage of Authentication / JWT / IDOR across the assessed attack surface.",
+                "markdown": "Coverage of Authentication / JWT / IDOR across the assessed attack surface."
+              },
+              "properties": {
+                "tags": [
+                  "coverage"
+                ]
+              }
+            },
+            {
+              "id": "strix-coverage/csrf-ambient-authority",
+              "name": "CSRF / ambient authority",
+              "shortDescription": {
+                "text": "Coverage: CSRF / ambient authority"
+              },
+              "fullDescription": {
+                "text": "Coverage of CSRF / ambient authority across the assessed attack surface."
+              },
+              "defaultConfiguration": {
+                "level": "none"
+              },
+              "help": {
+                "text": "Coverage of CSRF / ambient authority across the assessed attack surface.",
+                "markdown": "Coverage of CSRF / ambient authority across the assessed attack surface."
+              },
+              "properties": {
+                "tags": [
+                  "coverage"
+                ]
+              }
+            },
+            {
+              "id": "strix-coverage/known-cve-dependency-matching-and-reachability",
+              "name": "Known-CVE dependency matching and reachability",
+              "shortDescription": {
+                "text": "Coverage: Known-CVE dependency matching and reachability"
+              },
+              "fullDescription": {
+                "text": "Coverage of Known-CVE dependency matching and reachability across the assessed attack surface."
+              },
+              "defaultConfiguration": {
+                "level": "none"
+              },
+              "help": {
+                "text": "Coverage of Known-CVE dependency matching and reachability across the assessed attack surface.",
+                "markdown": "Coverage of Known-CVE dependency matching and reachability across the assessed attack surface."
+              },
+              "properties": {
+                "tags": [
+                  "coverage"
+                ]
+              }
+            },
+            {
+              "id": "strix-coverage/dependency-provenance-and-build-configuration",
+              "name": "Dependency provenance and build configuration",
+              "shortDescription": {
+                "text": "Coverage: Dependency provenance and build configuration"
+              },
+              "fullDescription": {
+                "text": "Coverage of Dependency provenance and build configuration across the assessed attack surface."
+              },
+              "defaultConfiguration": {
+                "level": "none"
+              },
+              "help": {
+                "text": "Coverage of Dependency provenance and build configuration across the assessed attack surface.",
+                "markdown": "Coverage of Dependency provenance and build configuration across the assessed attack surface."
+              },
+              "properties": {
+                "tags": [
+                  "coverage"
+                ]
+              }
+            },
+            {
+              "id": "strix-coverage/runtime-readiness-external-service-isolation",
+              "name": "Runtime readiness / external-service isolation",
+              "shortDescription": {
+                "text": "Coverage: Runtime readiness / external-service isolation"
+              },
+              "fullDescription": {
+                "text": "Coverage of Runtime readiness / external-service isolation across the assessed attack surface."
+              },
+              "defaultConfiguration": {
+                "level": "none"
+              },
+              "help": {
+                "text": "Coverage of Runtime readiness / external-service isolation across the assessed attack surface.",
+                "markdown": "Coverage of Runtime readiness / external-service isolation across the assessed attack surface."
+              },
+              "properties": {
+                "tags": [
+                  "coverage"
+                ]
+              }
+            },
+            {
+              "id": "strix-coverage/runtime-test-validity-build-parity",
+              "name": "Runtime test validity / build parity",
+              "shortDescription": {
+                "text": "Coverage: Runtime test validity / build parity"
+              },
+              "fullDescription": {
+                "text": "Coverage of Runtime test validity / build parity across the assessed attack surface."
+              },
+              "defaultConfiguration": {
+                "level": "none"
+              },
+              "help": {
+                "text": "Coverage of Runtime test validity / build parity across the assessed attack surface.",
+                "markdown": "Coverage of Runtime test validity / build parity across the assessed attack surface."
+              },
+              "properties": {
+                "tags": [
+                  "coverage"
+                ]
+              }
+            }
+          ],
+          "version": "1.7.0"
+        }
+      },
+      "results": [
+        {
+          "ruleId": "strix-coverage/hardcoded-credentials-and-secrets",
+          "ruleIndex": 0,
+          "kind": "pass",
+          "level": "none",
+          "message": {
+            "text": "Hardcoded credentials and secrets — Ruled out: Repository current source/config and 9-commit git history\n\nThe flagged RESEND_API_KEY exists only in ignored/untracked operator .env and server deployment .next/standalone/.env; src/lib/email/contact-email.ts:44 reads it only in server API call chain, next.config.ts has no env export, and route.ts:451 returns a fixed generic error rather than exception content. Exact in-memory comparison found no key across 73 source files, 26 public files, 194 production/dev client artifacts, or 252 reachable Git objects; ready local GET /api/health succeeded while /.env, /%2eenv, /.env.local, standalone/static aliases, and source URL all returned 404 without key bytes. No external provider call or credential-validity check was made; remote deployment configuration is not assessed."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Repository current source/config and 9-commit git history"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "strix": {
+              "coverage_outcome": "ruled_out",
+              "risk_area": "Hardcoded credentials and secrets",
+              "surface": "Repository current source/config and 9-commit git history",
+              "recorded_by": "Local Credential Exposure Validator",
+              "source": "agent_reported"
+            }
+          }
+        },
+        {
+          "ruleId": "strix-coverage/html-injection-semgrep-replaceall-escaping-audit",
+          "ruleIndex": 1,
+          "kind": "pass",
+          "level": "none",
+          "message": {
+            "text": "HTML injection / Semgrep replaceAll escaping audit — Ruled out: src/lib/email/contact-email.ts:23-29 HTML email templates\n\nAll attacker-derived strings interpolated into email HTML are passed through escapeHtml, which encodes &, <, >, double quote and apostrophe before text-node insertion; templates contain no attacker-controlled raw HTML, URL attributes, CSS or JavaScript contexts. The four Semgrep matches are chained replaceAll audit warnings for this same context-appropriate control, not bypass evidence."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "src/lib/email/contact-email.ts:23-29 HTML email templates"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "strix": {
+              "coverage_outcome": "ruled_out",
+              "risk_area": "HTML injection / Semgrep replaceAll escaping audit",
+              "surface": "src/lib/email/contact-email.ts:23-29 HTML email templates",
+              "recorded_by": "Source Architecture Mapper",
+              "source": "agent_reported"
+            }
+          }
+        },
+        {
+          "ruleId": "strix-coverage/path-traversal-semgrep-path-join-audit",
+          "ruleIndex": 2,
+          "kind": "pass",
+          "level": "none",
+          "message": {
+            "text": "Path traversal / Semgrep path.join audit — Ruled out: src/lib/files/al-private-storage.ts:40-61\n\nThe write destination is formed from crypto.randomUUID() plus path.extname(file.name).toLowerCase().slice(0,10), not the original filename; extname extracts an extension without filesystem separators, and the UUID prevents a dot-segment basename. This is the only destination construction before fs.writeFile in the helper. No current callers were found, but that absence is not the basis of closure."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "src/lib/files/al-private-storage.ts:40-61"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "strix": {
+              "coverage_outcome": "ruled_out",
+              "risk_area": "Path traversal / Semgrep path.join audit",
+              "surface": "src/lib/files/al-private-storage.ts:40-61",
+              "recorded_by": "Source Architecture Mapper",
+              "source": "agent_reported"
+            }
+          }
+        },
+        {
+          "ruleId": "strix-coverage/authentication-jwt-idor",
+          "ruleIndex": 3,
+          "kind": "notApplicable",
+          "level": "none",
+          "message": {
+            "text": "Authentication / JWT / IDOR — Not applicable: POST /api/contact authentication and object model\n\nPublic inquiry endpoint has no authentication/session/JWT, persisted user object, tenant, or user-selected private record. Handler constructs explicit contact fields and sends email; it cannot cross account/object boundaries that do not exist."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "POST /api/contact authentication and object model"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "strix": {
+              "coverage_outcome": "not_applicable",
+              "risk_area": "Authentication / JWT / IDOR",
+              "surface": "POST /api/contact authentication and object model",
+              "recorded_by": "Contact Mail Authority Review",
+              "source": "agent_reported"
+            }
+          }
+        },
+        {
+          "ruleId": "strix-coverage/csrf-ambient-authority",
+          "ruleIndex": 4,
+          "kind": "notApplicable",
+          "level": "none",
+          "message": {
+            "text": "CSRF / ambient authority — Not applicable: POST /api/contact anonymous submission\n\nRoute consumes no cookies, HTTP authentication, authorization token, or victim-associated persisted state. Cross-origin public submissions carry the same anonymous authority available by direct submission; missing origin validation is not an authenticated CSRF vulnerability."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "POST /api/contact anonymous submission"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "strix": {
+              "coverage_outcome": "not_applicable",
+              "risk_area": "CSRF / ambient authority",
+              "surface": "POST /api/contact anonymous submission",
+              "recorded_by": "Contact Mail Authority Review",
+              "source": "agent_reported"
+            }
+          }
+        },
+        {
+          "ruleId": "strix-coverage/known-cve-dependency-matching-and-reachability",
+          "ruleIndex": 5,
+          "kind": "open",
+          "level": "none",
+          "message": {
+            "text": "Known-CVE dependency matching and reachability — Requires further review: package-lock.json (458 resolved npm packages)\n\nVerified pinned+installed Next 16.4.3, React/DOM 19.2.8, Resend 6.32.1; retained full package inventory/import map. Trivy DB retrieval timed out with no cached DB; npm audit timed out after 100s; web_search unavailable and public OSV/registry requests failed through proxy. No advisory/version match could yet be verified, so no clean dependency claim or CVE report is justified."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "package-lock.json (458 resolved npm packages)"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "strix": {
+              "coverage_outcome": "needs_follow_up",
+              "risk_area": "Known-CVE dependency matching and reachability",
+              "surface": "package-lock.json (458 resolved npm packages)",
+              "recorded_by": "Secrets and Supply Chain Triage",
+              "source": "agent_reported"
+            }
+          }
+        },
+        {
+          "ruleId": "strix-coverage/dependency-provenance-and-build-configuration",
+          "ruleIndex": 6,
+          "kind": "pass",
+          "level": "none",
+          "message": {
+            "text": "Dependency provenance and build configuration — No issue identified: package-lock.json and .github/workflows/deploy-tpecloud.yml\n\nAll 458 resolved packages use registry.npmjs.org and carry integrity hashes; workflow uses npm ci, read-only repository permission, public official actions, and packages Next standalone output. No untrusted command interpolation, external package fallback runners, or embedded credentials were found. Tag pinning alone was not treated as a vulnerability."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "package-lock.json and .github/workflows/deploy-tpecloud.yml"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "strix": {
+              "coverage_outcome": "no_issue_found",
+              "risk_area": "Dependency provenance and build configuration",
+              "surface": "package-lock.json and .github/workflows/deploy-tpecloud.yml",
+              "recorded_by": "Secrets and Supply Chain Triage",
+              "source": "agent_reported"
+            }
+          }
+        },
+        {
+          "ruleId": "strix-coverage/runtime-readiness-external-service-isolation",
+          "ruleIndex": 7,
+          "kind": "pass",
+          "level": "none",
+          "message": {
+            "text": "Runtime readiness / external-service isolation — No issue identified: Local Next.js runtime preparation at 127.0.0.1:3100\n\nStarted existing production build on loopback with explicit empty mail env; /proc/2199/environ confirms all three email vars present with zero length. Health, root, contact, services, realisations, robots and sitemap GETs return 200; no DB/accounts required and no email requests submitted."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Local Next.js runtime preparation at 127.0.0.1:3100"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "strix": {
+              "coverage_outcome": "no_issue_found",
+              "risk_area": "Runtime readiness / external-service isolation",
+              "surface": "Local Next.js runtime preparation at 127.0.0.1:3100",
+              "recorded_by": "Local Runtime Preparation",
+              "source": "agent_reported"
+            }
+          }
+        },
+        {
+          "ruleId": "strix-coverage/runtime-test-validity-build-parity",
+          "ruleIndex": 8,
+          "kind": "open",
+          "level": "none",
+          "message": {
+            "text": "Runtime test validity / build parity — Requires further review: Existing .next production artifact and current source correspondence\n\nRuntime uses Nov 4 Windows-generated .next artifact; smoke passes but artifact-to-checkout exact parity was not established. Rebuilding source in a separate isolated copy would be required for any discrepancy-dependent validation; bundled native sharp is Windows-only and local image optimization remains untested."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Existing .next production artifact and current source correspondence"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "strix": {
+              "coverage_outcome": "needs_follow_up",
+              "risk_area": "Runtime test validity / build parity",
+              "surface": "Existing .next production artifact and current source correspondence",
+              "recorded_by": "Local Runtime Preparation",
+              "source": "agent_reported"
+            }
+          }
+        }
+      ],
+      "invocations": [
+        {
+          "executionSuccessful": false,
+          "toolExecutionNotifications": [
+            {
+              "level": "warning",
+              "message": {
+                "text": "The scan ended with status 'running' rather than completing, so coverage reflects only the work finished before it stopped."
+              }
+            },
+            {
+              "level": "warning",
+              "message": {
+                "text": "6 agent(s) did not finish cleanly (Contact Input Validation Recovery, Contact Workflow Validation Recovery, Dependency Advisory Verification Recovery, Public Route Boundary Review, Public Route Verification, Root Agent); any surface they held is under-covered."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,381 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-05 16:12:11 UTC",
+  "run_id": "daak-tech_3ee2",
+  "run_name": "daak-tech_3ee2",
+  "scope": {
+    "targets": [
+      {
+        "type": "local_code",
+        "details": {
+          "target_path": "C:\\Users\\ASUS TUF\\Desktop\\DAAK_TECH\\DAAK_TECH",
+          "workspace_subdir": "DAAK_TECH"
+        },
+        "original": "C:\\Users\\ASUS TUF\\Desktop\\DAAK_TECH\\DAAK_TECH"
+      }
+    ],
+    "scan_mode": "quick",
+    "scope_mode": "auto",
+    "diff_scope": {
+      "active": false,
+      "mode": "auto"
+    },
+    "instruction": ""
+  },
+  "summary": {
+    "surfaces_reviewed": 9,
+    "outcomes": {
+      "no_issue_found": 2,
+      "ruled_out": 3,
+      "not_applicable": 2,
+      "needs_follow_up": 2
+    },
+    "findings_filed": 0,
+    "gaps": 14
+  },
+  "machine_observed": {
+    "agents": [
+      {
+        "agent_id": "ef78aa95",
+        "agent_name": "Contact Input Boundary Review",
+        "status": "failed",
+        "skills": [
+          "insecure_file_uploads",
+          "xss",
+          "rce"
+        ],
+        "task": "Assess /workspace/DAAK_TECH POST /api/contact input boundary: attachment/path/header/HTML injection and bounded multipart parser resource handling. get_threat_model and shared notes first. Local app http://127.0.0.1:3100 uses existing .next build with RESEND_API_KEY empty to block email; source/build parity open coverage597646. Check source vs runtime for actual handler before conclusions. Do not enable real email. For successful provider-path tests SDK RESEND_BASE_URL can target local stub with synthetic key; coordinate owner6e58f77c (mail authority reviewer) who owns recipient/concurrency/CSRF, not your injection work. Review and dynamically confirm existing HTML escaping, scalar validation, filename/MIME handling, no arbitrary fetch/command/SQL/XML path; record not_applicable as appropriate. Use bounded resource tests only, no unbounded DoS. If candidate real spawn focused validation child then reporting-with-fix child. No product edits without confirmed issue + reporting-inline verified fix; consult installed Next docs/AGENTS. Explicit tty=true shell=/bin/bash login=false for shell. Keep scope source/local only.",
+        "is_root": false
+      },
+      {
+        "agent_id": "931e94ce",
+        "agent_name": "Contact Input Validation Recovery",
+        "status": "running",
+        "skills": [
+          "insecure_file_uploads",
+          "xss",
+          "rce"
+        ],
+        "task": "Resume failed input reviewer ef78aa95 for /workspace/DAAK_TECH. Read get_threat_model and notes f31516,9526e3. Your ONE task is POST /api/contact input security boundary: validation of multipart fields/attachments, HTML/header injection and bounded parser handling. Architecture, Semgrep/AST already done; no need repeat scans. Runtime3100 empty mail key, runtime3101 synthetic key with RESEND_BASE_URL=http://127.0.0.1:3201 stub, existing captures /workspace/.contact-authority/mail-capture.jsonl. Verify active process settings/isolation before requests; never real mail/keys. Explicit shell=/bin/bash login=false tty=true for every exec. Read previous artifacts first; no product edits. Need dynamic benign/negative checks and static parity assessment since .next older than source: resolve coverage597646 if possible without touching product/build (isolated external copy if needed). Coordinate with workflow recovery worker on capture boundaries; own injection/attachment, not recipient/concurrency business logic. Record coverage for SQL/XXE/SSRF/RCE applicability by trace, XSS and attachment checks, resource limit gaps. No speculative availability findings: bounded tests only. Candidate -> focused validation child -> reporting child with verified inline fix. End with concrete tested outcomes and unresolved proof gaps.",
+        "is_root": false
+      },
+      {
+        "agent_id": "6e58f77c",
+        "agent_name": "Contact Mail Authority Review",
+        "status": "failed",
+        "skills": [
+          "business_logic",
+          "race_conditions",
+          "csrf"
+        ],
+        "task": "Assess ONLY the anonymous contact workflow's use of email authority in /workspace/DAAK_TECH: recipient control, confirmation-content abuse, meaningful rate/concurrency/idempotency abuse, and origin/CSRF relevance. Read get_threat_model('/workspace/DAAK_TECH') and shared notes first. Runtime prep agent 856b1ab6 is isolating real RESEND_API_KEY; do not send email or use real provider credentials. Await/use local stub or construct isolated local validation with provider stub; coordinate with runtime agent if necessary. Distinguish intended public inquiry/confirmation from unauthorized consequence; missing rate limiting alone is not finding. No broad HTML/parser/attachment injection testing (separate agent). Record coverage including race, auth/IDOR applicability based on no auth/DB. If plausible finding, spawn dedicated validation child; if confirmed validator spawns reporting-with-fix child. Reporting agent derives/verifies inline fix as part of reporting; don't silently edit product files. Read AGENTS/installed Next docs before any proposed code edits. No production/external validation.",
+        "is_root": false
+      },
+      {
+        "agent_id": "11e4e1ed",
+        "agent_name": "Contact Workflow Validation Recovery",
+        "status": "crashed",
+        "skills": [
+          "business_logic",
+          "race_conditions",
+          "csrf"
+        ],
+        "task": "Resume failed mail-authority reviewer6e58f77c on /workspace/DAAK_TECH; ONE task is contact workflow recipient/authority manipulation and bounded concurrency/confirmation abuse. Read get_threat_model and coverage; auth/IDOR/CSRF already not_applicable no accounts/DB. Existing worker started synthetic provider app3101 with RESEND_BASE_URL=http://127.0.0.1:3201 local stub; logs /workspace/.contact-authority/mail-capture.jsonl and app session44388. Verify process/stub settings and reuse setup if valid. Never use real .env credential or external emails; only local stub and .test addresses. Use exec shell=/bin/bash login=false tty=true always. Read prior artifacts to avoid rerunning completed tests. Need bounded baseline, recipient/header field tampering and small concurrency check; distinguish intended anonymous confirmation from actual unauthorized consequence. Missing rate limit alone not finding. Input worker931e94ce owns HTML/attachments/parser testing and parity; coordinate log attribution directly. File findings only via dedicated validator then reporting child with verified inline fix. Record coverage; end with concrete test evidence, open gaps, owned process/session inventory. No product edits.",
+        "is_root": false
+      },
+      {
+        "agent_id": "42221e5d",
+        "agent_name": "Dependency Advisory Verification Recovery",
+        "status": "running",
+        "skills": [
+          "dependency_cve_scanning"
+        ],
+        "task": "Complete failed SCA worker37882f8b ONLY dependency advisory verification for /workspace/DAAK_TECH. get_threat_model, note89c79a, existing artifacts /workspace/.secrets-sca. Secrets exposure validator already ruled_out; gitleaks history/source complete; trivy attempted but DB unavailable. Do not repeat secrets or architecture. Open coveragea4ae57 package-lock known-CVE lookup must update same entry. Existing pins Next16.4.3 React19.2.8 Resend6.32.1, lock458 packages. Prior npm audit may have left artifacts; inspect. Advisory access workaround public registry with proxies unset/curl --noproxy '*' succeeds; proxied registry/OSV hangs. Use bounded direct public metadata requests only, no real secrets/external app interaction. web_search unavailable. Verify advisory CVE and affected resolved versions, report verified matches via create_dependency_report with usage and source-to-sink trace+contextual CVSS per skill; do not infer vulnerabilities merely outdated. If no connectivity after bounded attempts clearly leave proof gap. Shell=/bin/bash login=false tty=true always. Record actual command results and remaining limits then finish.",
+        "is_root": false
+      },
+      {
+        "agent_id": "df57685d",
+        "agent_name": "Local Credential Exposure Validator",
+        "status": "completed",
+        "skills": [
+          "information_disclosure"
+        ],
+        "task": "Independently validate exposure candidate only in /workspace/DAAK_TECH (get_threat_model first, read AGENTS.md). Gitleaks working-tree scan at /workspace/.secrets-sca/gitleaks-working-tree.json flagged .env:1 RESEND_API_KEY; local metadata shows resend-shaped 36-character non-placeholder value. .env is ignored and not tracked. Determine if actual unauthorized disclosure path exists in current source, git history, client bundles or locally running app. Never print/copy full secret or contact any external secret-backed service; static local comparisons allowed. Coordinate runtime agent 856b1ab6 for ready local URL and outbound network prevention. Source mapper f9440b99 owns architecture. No product edits. Do not file merely for presence in .env. If actual exposure confirmed, spawn reporting child to derive/report inline fix under normal reporting gates; otherwise record ruled_out or needs_follow_up with precise control/gap. Shell must use shell='bash',login=false,tty=true for visible outputs. Artifacts outside product tree.",
+        "is_root": false
+      },
+      {
+        "agent_id": "856b1ab6",
+        "agent_name": "Local Runtime Preparation",
+        "status": "completed",
+        "skills": [
+          "business_logic"
+        ],
+        "task": "Prepare and characterize local runtime for /workspace/DAAK_TECH. Read applicable instructions, manifests and scripts; get_threat_model first and inherit/amend mapper's baseline once available. Determine how app runs, start it bound to loopback on free port, use only local test environment and avoid production databases, outbound email/payment or mutating external services. Share start commands, PID/session, local URL, required env gaps, synthetic auth accounts if safe, and basic route smoke observations in a shared note. This is runtime preparation, not broad vulnerability discovery. Do not modify existing product/config files; use external temporary env overrides where needed. Record coverage for runtime readiness and limitations. Explicit bash login=false if exec returns blank. No docker.",
+        "is_root": false
+      },
+      {
+        "agent_id": "b1ba4594",
+        "agent_name": "Public Route Boundary Review",
+        "status": "crashed",
+        "skills": [
+          "nextjs",
+          "browser_security",
+          "path_traversal_lfi_rfi"
+        ],
+        "task": "ONE focused task /workspace/DAAK_TECH: public Next.js route/query/static-resource boundary validation. Read get_threat_model and architecture notef31516. No auth/DB; static pages Slugs and /contact?service= are user input, image optimizer is framework-level untested. Existing app http://127.0.0.1:3100 has blank mail key; do not send contact forms (owned by931e94ce and11e4e1ed). Review Next config/current rendering controls for browser script/URL injection, path traversal/static file disclosure and /_next/image destination authorization. Bounded dynamic tests against loopback only; any destination test must be local mock, not production internet. Use agent-browser --session public-route-review if needed; close browser at finish. Do not repeat secrets or semgrep scans. Confirm source vs existing build where relevant. Shell=/bin/bash login=false tty=true. No product file edits; follow AGENTS/installed docs before any fixes. For candidates spawn independent validation child then reporting child with verified inline fix. Record coverage, especially static/public route checks and unresolved native sharp support rather than claim clean if optimizer broken. Report concrete results and owned process cleanup.",
+        "is_root": false
+      },
+      {
+        "agent_id": "79486683",
+        "agent_name": "Public Route Verification",
+        "status": "running",
+        "skills": [
+          "nextjs",
+          "browser_security"
+        ],
+        "task": "Bounded white-box security task for /workspace/DAAK_TECH (Next.js marketing site). Read AGENTS.md and get_threat_model('/workspace/DAAK_TECH'), notes f31516/206290. Test ONLY public route/query/resource boundaries, not contact POST. App http://127.0.0.1:3100 is loopback, real mail disabled by empty env. Inspect user-controlled service query and dynamic service/project slugs for browser injection and static/path disclosure; inspect /_next/image local destination controls using local mock only if needed. No external app tests, no use real .env. Own source changes none. Installed native sharp Windows-only may block optimizer; document actual gap. Use shell=/bin/bash,login=false,tty=true for exec; browser --session route-verification and close at end. Source map/scans completed elsewhere; do not rerun scanners. Record coverage named controls and dynamic tests; needs_follow_up for unproven. Real finding needs independent validator then reporting child with verified inline fix. Keep bounded and finish with exact results. Prior b1ba4594 crashed before results; do not rely on it.",
+        "is_root": false
+      },
+      {
+        "agent_id": "cdc93309",
+        "agent_name": "Root Agent",
+        "status": "running",
+        "skills": [],
+        "task": "\n\nLocal Codebases: - C:\\Users\\ASUS TUF\\Desktop\\DAAK_TECH\\DAAK_TECH (available at: /workspace/DAAK_TECH; this is the user's real directory, mounted live and writable — .git/.agents/.codex are read-only)",
+        "is_root": true
+      },
+      {
+        "agent_id": "37882f8b",
+        "agent_name": "Secrets and Supply Chain Triage",
+        "status": "failed",
+        "skills": [
+          "dependency_cve_scanning",
+          "information_disclosure"
+        ],
+        "task": "For /workspace/DAAK_TECH perform bounded secrets and dependency/config triage only. Read applicable AGENTS.md; get_threat_model first and adopt baseline when mapper saves it. Own gitleaks and/or trufflehog pass plus trivy fs pass; keep outputs outside product tree. Review pinned manifest/lockfile versions with verified advisories and concrete usage source-to-sink reachability. Never contact external secret-backed services to test credentials. Report known-CVE issues with create_dependency_report only after verifying affected pinned version/advisory; for actual secret exposure candidate delegate independent validation then reporting child rather than report yourself. Do not treat placeholders/public keys as secrets. Record coverage and all execution gaps. Coordinate runtime agent for local validation where useful; no product edits. Explicit bash login=false if blank output.",
+        "is_root": false
+      },
+      {
+        "agent_id": "f9440b99",
+        "agent_name": "Source Architecture Mapper",
+        "status": "completed",
+        "skills": [
+          "source_aware_sast"
+        ],
+        "task": "Map /workspace/DAAK_TECH as a bounded rapid white-box orientation task, not vulnerability exploitation. Read applicable AGENTS.md instructions, repository structure, manifests, recent git changes, documented security boundaries, product vs tooling, routes and auth/data flows. get_threat_model first (none exists yet); derive and save baseline target-wide threat model with file-grounded boundaries. Share concise architecture/route inventory and prioritized risk surfaces as a note and completion. Do not modify product files. Coordinate scanner ownership: YOU own semgrep pass and required AST pass, derive sg-targets.txt from semgrep.json scope, keep artifacts bounded outside product tree. Other agents own runtime and secrets/dependency scans. If shell output is blank with default shell, explicitly use shell=/bin/bash,login=false. No external/deployed targets authorized beyond code and locally launched services.",
+        "is_root": false
+      }
+    ],
+    "skills_exercised": [
+      "browser_security",
+      "business_logic",
+      "csrf",
+      "dependency_cve_scanning",
+      "information_disclosure",
+      "insecure_file_uploads",
+      "nextjs",
+      "path_traversal_lfi_rfi",
+      "race_conditions",
+      "rce",
+      "source_aware_sast",
+      "xss"
+    ],
+    "findings_filed": 0,
+    "source": "runtime"
+  },
+  "completeness": {
+    "complete": false,
+    "scan_status": "running",
+    "exit_reason": null,
+    "caveats": [
+      "The scan ended with status 'running' rather than completing, so coverage reflects only the work finished before it stopped.",
+      "6 agent(s) did not finish cleanly (Contact Input Validation Recovery, Contact Workflow Validation Recovery, Dependency Advisory Verification Recovery, Public Route Boundary Review, Public Route Verification, Root Agent); any surface they held is under-covered."
+    ]
+  },
+  "entries": [
+    {
+      "surface": "Repository current source/config and 9-commit git history",
+      "risk_area": "Hardcoded credentials and secrets",
+      "outcome": "ruled_out",
+      "outcome_label": "Ruled out",
+      "evidence": "The flagged RESEND_API_KEY exists only in ignored/untracked operator .env and server deployment .next/standalone/.env; src/lib/email/contact-email.ts:44 reads it only in server API call chain, next.config.ts has no env export, and route.ts:451 returns a fixed generic error rather than exception content. Exact in-memory comparison found no key across 73 source files, 26 public files, 194 production/dev client artifacts, or 252 reachable Git objects; ready local GET /api/health succeeded while /.env, /%2eenv, /.env.local, standalone/static aliases, and source URL all returned 404 without key bytes. No external provider call or credential-validity check was made; remote deployment configuration is not assessed.",
+      "recorded_by": "Local Credential Exposure Validator",
+      "recorded_at": "2026-11-05 12:36:36 UTC",
+      "updated_at": "2026-11-05 12:39:58 UTC",
+      "previous_outcomes": [
+        "needs_follow_up"
+      ],
+      "source": "agent_reported"
+    },
+    {
+      "surface": "src/lib/email/contact-email.ts:23-29 HTML email templates",
+      "risk_area": "HTML injection / Semgrep replaceAll escaping audit",
+      "outcome": "ruled_out",
+      "outcome_label": "Ruled out",
+      "evidence": "All attacker-derived strings interpolated into email HTML are passed through escapeHtml, which encodes &, <, >, double quote and apostrophe before text-node insertion; templates contain no attacker-controlled raw HTML, URL attributes, CSS or JavaScript contexts. The four Semgrep matches are chained replaceAll audit warnings for this same context-appropriate control, not bypass evidence.",
+      "recorded_by": "Source Architecture Mapper",
+      "recorded_at": "2026-11-05 12:37:28 UTC",
+      "updated_at": "",
+      "previous_outcomes": [],
+      "source": "agent_reported"
+    },
+    {
+      "surface": "src/lib/files/al-private-storage.ts:40-61",
+      "risk_area": "Path traversal / Semgrep path.join audit",
+      "outcome": "ruled_out",
+      "outcome_label": "Ruled out",
+      "evidence": "The write destination is formed from crypto.randomUUID() plus path.extname(file.name).toLowerCase().slice(0,10), not the original filename; extname extracts an extension without filesystem separators, and the UUID prevents a dot-segment basename. This is the only destination construction before fs.writeFile in the helper. No current callers were found, but that absence is not the basis of closure.",
+      "recorded_by": "Source Architecture Mapper",
+      "recorded_at": "2026-11-05 12:37:36 UTC",
+      "updated_at": "",
+      "previous_outcomes": [],
+      "source": "agent_reported"
+    },
+    {
+      "surface": "POST /api/contact authentication and object model",
+      "risk_area": "Authentication / JWT / IDOR",
+      "outcome": "not_applicable",
+      "outcome_label": "Not applicable",
+      "evidence": "Public inquiry endpoint has no authentication/session/JWT, persisted user object, tenant, or user-selected private record. Handler constructs explicit contact fields and sends email; it cannot cross account/object boundaries that do not exist.",
+      "recorded_by": "Contact Mail Authority Review",
+      "recorded_at": "2026-11-05 12:37:41 UTC",
+      "updated_at": "",
+      "previous_outcomes": [],
+      "source": "agent_reported"
+    },
+    {
+      "surface": "POST /api/contact anonymous submission",
+      "risk_area": "CSRF / ambient authority",
+      "outcome": "not_applicable",
+      "outcome_label": "Not applicable",
+      "evidence": "Route consumes no cookies, HTTP authentication, authorization token, or victim-associated persisted state. Cross-origin public submissions carry the same anonymous authority available by direct submission; missing origin validation is not an authenticated CSRF vulnerability.",
+      "recorded_by": "Contact Mail Authority Review",
+      "recorded_at": "2026-11-05 12:37:49 UTC",
+      "updated_at": "",
+      "previous_outcomes": [],
+      "source": "agent_reported"
+    },
+    {
+      "surface": "package-lock.json (458 resolved npm packages)",
+      "risk_area": "Known-CVE dependency matching and reachability",
+      "outcome": "needs_follow_up",
+      "outcome_label": "Requires further review",
+      "evidence": "Verified pinned+installed Next 16.4.3, React/DOM 19.2.8, Resend 6.32.1; retained full package inventory/import map. Trivy DB retrieval timed out with no cached DB; npm audit timed out after 100s; web_search unavailable and public OSV/registry requests failed through proxy. No advisory/version match could yet be verified, so no clean dependency claim or CVE report is justified.",
+      "recorded_by": "Secrets and Supply Chain Triage",
+      "recorded_at": "2026-11-05 12:38:27 UTC",
+      "updated_at": "",
+      "previous_outcomes": [],
+      "source": "agent_reported"
+    },
+    {
+      "surface": "package-lock.json and .github/workflows/deploy-tpecloud.yml",
+      "risk_area": "Dependency provenance and build configuration",
+      "outcome": "no_issue_found",
+      "outcome_label": "No issue identified",
+      "evidence": "All 458 resolved packages use registry.npmjs.org and carry integrity hashes; workflow uses npm ci, read-only repository permission, public official actions, and packages Next standalone output. No untrusted command interpolation, external package fallback runners, or embedded credentials were found. Tag pinning alone was not treated as a vulnerability.",
+      "recorded_by": "Secrets and Supply Chain Triage",
+      "recorded_at": "2026-11-05 12:38:35 UTC",
+      "updated_at": "",
+      "previous_outcomes": [],
+      "source": "agent_reported"
+    },
+    {
+      "surface": "Local Next.js runtime preparation at 127.0.0.1:3100",
+      "risk_area": "Runtime readiness / external-service isolation",
+      "outcome": "no_issue_found",
+      "outcome_label": "No issue identified",
+      "evidence": "Started existing production build on loopback with explicit empty mail env; /proc/2199/environ confirms all three email vars present with zero length. Health, root, contact, services, realisations, robots and sitemap GETs return 200; no DB/accounts required and no email requests submitted.",
+      "recorded_by": "Local Runtime Preparation",
+      "recorded_at": "2026-11-05 12:40:11 UTC",
+      "updated_at": "",
+      "previous_outcomes": [],
+      "source": "agent_reported"
+    },
+    {
+      "surface": "Existing .next production artifact and current source correspondence",
+      "risk_area": "Runtime test validity / build parity",
+      "outcome": "needs_follow_up",
+      "outcome_label": "Requires further review",
+      "evidence": "Runtime uses Nov 4 Windows-generated .next artifact; smoke passes but artifact-to-checkout exact parity was not established. Rebuilding source in a separate isolated copy would be required for any discrepancy-dependent validation; bundled native sharp is Windows-only and local image optimization remains untested.",
+      "recorded_by": "Local Runtime Preparation",
+      "recorded_at": "2026-11-05 12:40:26 UTC",
+      "updated_at": "",
+      "previous_outcomes": [],
+      "source": "agent_reported"
+    }
+  ],
+  "gaps": [
+    {
+      "kind": "needs_follow_up",
+      "surface": "package-lock.json (458 resolved npm packages)",
+      "risk_area": "Known-CVE dependency matching and reachability",
+      "detail": "Verified pinned+installed Next 16.4.3, React/DOM 19.2.8, Resend 6.32.1; retained full package inventory/import map. Trivy DB retrieval timed out with no cached DB; npm audit timed out after 100s; web_search unavailable and public OSV/registry requests failed through proxy. No advisory/version match could yet be verified, so no clean dependency claim or CVE report is justified."
+    },
+    {
+      "kind": "needs_follow_up",
+      "surface": "Existing .next production artifact and current source correspondence",
+      "risk_area": "Runtime test validity / build parity",
+      "detail": "Runtime uses Nov 4 Windows-generated .next artifact; smoke passes but artifact-to-checkout exact parity was not established. Rebuilding source in a separate isolated copy would be required for any discrepancy-dependent validation; bundled native sharp is Windows-only and local image optimization remains untested."
+    },
+    {
+      "kind": "unrecorded_risk_class",
+      "risk_area": "browser security",
+      "detail": "Agent(s) Public Route Boundary Review, Public Route Verification were assigned the 'browser_security' skill, but no coverage entry records this class being assessed. Treat it as unexamined, not as clean."
+    },
+    {
+      "kind": "unrecorded_risk_class",
+      "risk_area": "business logic",
+      "detail": "Agent(s) Contact Mail Authority Review, Contact Workflow Validation Recovery, Local Runtime Preparation were assigned the 'business_logic' skill, but no coverage entry records this class being assessed. Treat it as unexamined, not as clean."
+    },
+    {
+      "kind": "unrecorded_risk_class",
+      "risk_area": "information disclosure",
+      "detail": "Agent(s) Local Credential Exposure Validator, Secrets and Supply Chain Triage were assigned the 'information_disclosure' skill, but no coverage entry records this class being assessed. Treat it as unexamined, not as clean."
+    },
+    {
+      "kind": "unrecorded_risk_class",
+      "risk_area": "insecure file uploads",
+      "detail": "Agent(s) Contact Input Boundary Review, Contact Input Validation Recovery were assigned the 'insecure_file_uploads' skill, but no coverage entry records this class being assessed. Treat it as unexamined, not as clean."
+    },
+    {
+      "kind": "unrecorded_risk_class",
+      "risk_area": "race conditions",
+      "detail": "Agent(s) Contact Mail Authority Review, Contact Workflow Validation Recovery were assigned the 'race_conditions' skill, but no coverage entry records this class being assessed. Treat it as unexamined, not as clean."
+    },
+    {
+      "kind": "unrecorded_risk_class",
+      "risk_area": "xss",
+      "detail": "Agent(s) Contact Input Boundary Review, Contact Input Validation Recovery were assigned the 'xss' skill, but no coverage entry records this class being assessed. Treat it as unexamined, not as clean."
+    },
+    {
+      "kind": "agent_recorded_no_coverage",
+      "agent_name": "Contact Input Boundary Review",
+      "detail": "Contact Input Boundary Review ran (status: failed) without recording any coverage. Whatever it examined is absent from this record."
+    },
+    {
+      "kind": "agent_recorded_no_coverage",
+      "agent_name": "Contact Input Validation Recovery",
+      "detail": "Contact Input Validation Recovery ran (status: running) without recording any coverage. Whatever it examined is absent from this record."
+    },
+    {
+      "kind": "agent_recorded_no_coverage",
+      "agent_name": "Contact Workflow Validation Recovery",
+      "detail": "Contact Workflow Validation Recovery ran (status: crashed) without recording any coverage. Whatever it examined is absent from this record."
+    },
+    {
+      "kind": "agent_recorded_no_coverage",
+      "agent_name": "Dependency Advisory Verification Recovery",
+      "detail": "Dependency Advisory Verification Recovery ran (status: running) without recording any coverage. Whatever it examined is absent from this record."
+    },
+    {
+      "kind": "agent_recorded_no_coverage",
+      "agent_name": "Public Route Boundary Review",
+      "detail": "Public Route Boundary Review ran (status: crashed) without recording any coverage. Whatever it examined is absent from this record."
+    },
+    {
+      "kind": "agent_recorded_no_coverage",
+      "agent_name": "Public Route Verification",
+      "detail": "Public Route Verification ran (status: running) without recording any coverage. Whatever it examined is absent from this record."
+    }
+  ]
+}
